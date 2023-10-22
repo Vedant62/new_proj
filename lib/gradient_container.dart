@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_project_app/styled_text.dart';
+import 'package:new_project_app/dice_roller.dart';
 
 class GradientContainer extends StatelessWidget{
   //this will accept a named argument called 'key'
@@ -9,20 +9,16 @@ class GradientContainer extends StatelessWidget{
   const GradientContainer(this.colors, {super.key});
   //if in above we want to use named arguments, we can do that but we would have to add
   final List<Color> colors;
+
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
-          gradient: RadialGradient(colors: [
-            Colors.purple,
-            Colors.indigo,
-            Colors.blue,
-            Colors.green,
-          ], radius: 3.5),
+      decoration: BoxDecoration(
+          gradient: RadialGradient(colors: colors, radius: 3.5),
           backgroundBlendMode: BlendMode.multiply
       ),
-      child: const Center(
-        child: StyledText("HELLO THERE!"),
+      child:  const Center(
+        child: DiceRoller(), //Image has multiple constructors like this one
       ),
     );
   }
