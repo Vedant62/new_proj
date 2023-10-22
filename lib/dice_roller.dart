@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-
+final randomizer = Random();
 class DiceRoller extends StatefulWidget{
   const DiceRoller({super.key});
 
@@ -27,7 +27,7 @@ class _DiceRollerState extends State<DiceRoller>{
     // tells flutter to re-execute the build function of the state in which you call setState
     // if it finds a demand of an updated UI, it then goes all the way up and rebuilds wherever needed
     setState(() { // where one wants to update in UI
-      currentDiceRoll = Random().nextInt(6) + 1;
+      currentDiceRoll = randomizer.nextInt(6) + 1;
     });
 
   }
